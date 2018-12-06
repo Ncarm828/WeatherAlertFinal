@@ -1,0 +1,55 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            <form action="{% url 'login' %}" method="post" class="form-horizontal">
+                {% csrf_token %}
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                <div class="form-group">
+                    <label for="username" class="col-md-2 control-label">Username</label>
+                    <div class="col-md-10">
+                    <input type="text" name="username" placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-md-2 control-label">Password</label>
+                    <div class="col-md-10">
+                     <input type="password" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="hidden" name="next" value="/" />
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+            </form>
+            <form action="{% url 'signup' %}" method="get" class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="hidden" name="next" value="/" />
+                        <input type="submit" value="Register" class="btn btn-default" />
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm"></section>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    {% load staticfiles %}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+
+{% endblock %}
