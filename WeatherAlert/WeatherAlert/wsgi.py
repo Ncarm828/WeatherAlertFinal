@@ -14,6 +14,7 @@ framework.
 
 """
 import os
+from whitenoise.django import DjangoWhiteNoise
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "WeatherAlert.settings")
 
@@ -26,3 +27,4 @@ application = get_wsgi_application()
 # Apply WSGI middleware here.
 # from helloworld.wsgi import HelloWorldApplication
 # application = HelloWorldApplication(application)
+application = DjangoWhiteNoise(application)

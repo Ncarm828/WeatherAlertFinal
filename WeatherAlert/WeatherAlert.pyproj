@@ -49,6 +49,9 @@
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
     <Compile Include="manage.py" />
+    <Compile Include="Procfile.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="WeatherAlert\__init__.py" />
     <Compile Include="WeatherAlert\settings.py" />
     <Compile Include="WeatherAlert\urls.py" />
@@ -67,6 +70,9 @@
     <Folder Include="WeatherAlert\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="runtime.txt">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="app\templates\app\cancel.html" />
     <Content Include="app\templates\app\profile.html" />
     <Content Include="app\templates\app\signup.html" />
