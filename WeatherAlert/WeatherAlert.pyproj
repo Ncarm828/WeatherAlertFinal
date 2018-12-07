@@ -38,7 +38,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\models.py" />
-    <Compile Include="WeatherAlert\sendWeather.py">
+    <Compile Include="app\sendWeather.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\tests.py" />
