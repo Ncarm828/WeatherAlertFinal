@@ -1,1 +1,2 @@
-web: gunicorn WeatherAlert.wsgi --log-file -
+echo "web: gunicorn WeatherAlert.wsgi --log-file -" > Procfile
+sendWeather: python sendWeather.py
