@@ -42,7 +42,7 @@ def timed_job():
 
         #incase app doesn't run exactly every 10 minutes....
         margin_of_error = timedelta(seconds=60*9)  # 9 minutes in either direction 
-        if utc_now - margin_of_error < todays_desired_alarm_time < utc_now + margin_of_error:
+        if utc_now - margin_of_error < todays_desired_alarm_time: #< utc_now + margin_of_error:
             return True
 
 
