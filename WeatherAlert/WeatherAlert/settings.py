@@ -22,7 +22,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '49e9d78b-6f07-42fc-a292-ea216b18ad5b'
 
+# SECURITY WARNING: Keep this secret, this is the Yahoo API key
+os.environ["FORECAST_API_KEY"] = '8ff03310cdd589a2a389817b68be470cc68e1dac'
+
+# SECURITY WARNING: Keep this secret, this is the GOOGLE API key
+os.environ["GOOGLE_API_KEY"] = 'AIzaSyBdU7JtTksQfZ1TGNtpGAqZFjY37RjLu2s'
+
+os.environ["TWILIO_ACCOUNT_SID"] = 'ACb7075682892923d93a9f548e2e0f0d9c'
+
+os.environ["TWILIO_AUTH_TOKEN"] = '348c88a07af309f182a05f10bc387e4d'
+
+os.environ['TWILIO_PHONE_NUMBER'] = '+12676197283'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!

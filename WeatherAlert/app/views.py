@@ -140,6 +140,11 @@ def user_login(request):
         return render(request, 'app/login.html', {})
 
 
+def logout_view(request):
+    logout(request)
+
+
+
 def profile(request):
 
     """Renders the profile page."""
@@ -157,7 +162,6 @@ def profile(request):
     else:
         if request.user.is_authenticated:
             data = UsersProfile.objects.get(username__username=request.user.username)
-          ##  profile = ProfileForm(instance=data)
             profile = {
                 'location': data.location,
                 'time':data.time,

@@ -17,19 +17,14 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^$', app.views.home, name='home'),
-    url(r'^weather', app.views.weather, name='weather'),
-    url(r'^profile', app.views.profile, name='profile'),
+    url(r'^weather/$', app.views.weather, name='weather'),
+    url(r'^profile/$', app.views.profile, name='profile'),
     url(r'^signup/$',app.views.user_signup,name='signup'),
     url(r'^verify/$',app.views.verify,name='verify'),
     url(r'^cancel/$',app.views.cancel,name='cancel'),
-    url(r'^login/$',app.views.user_login,name='login'),
+    url(r'^logout/$', app.views.logout_view,name='logout'),
 
-    url(r'^logout$',
-        django.contrib.auth.views.LogoutView,
-        {
-            'next_page': '/',
-        },
-        name='logout'),
+    url(r'^login/$',app.views.user_login,name='login'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
      url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

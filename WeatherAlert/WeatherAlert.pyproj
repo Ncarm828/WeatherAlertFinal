@@ -73,6 +73,9 @@
     <Folder Include="WeatherAlert\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\logout.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="runtime.txt">
       <SubType>Code</SubType>
     </Content>
@@ -112,7 +115,7 @@
     <Content Include="app\templates\app\loginpartial.html" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="readme.html">
+    <None Include="readme.md">
       <SubType>WebBrowser</SubType>
     </None>
   </ItemGroup>
