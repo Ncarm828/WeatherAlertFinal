@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^signup/$',app.views.user_signup,name='signup'),
     url(r'^verify/$',app.views.verify,name='verify'),
     url(r'^cancel/$',app.views.cancel,name='cancel'),
-    url(r'^/$',TemplateView.as_view(template_name='logout.html'),name='logout'),
+    url(r'^logout/$',app.views.logout_view,name='logout_view'),
 
     url(r'^login/$',app.views.user_login,name='login'),
 

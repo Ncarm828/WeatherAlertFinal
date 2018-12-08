@@ -73,7 +73,7 @@
     <Folder Include="WeatherAlert\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\templates\app\logout.html">
+    <Content Include="app\templates\app\logout_view.html">
       <SubType>Code</SubType>
     </Content>
     <Content Include="runtime.txt">

@@ -1,0 +1,14 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+
+
+    <form action="{% url 'logout_view' %}" method="get" class="form-horizontal">
+    {% csrf_token %}
+        <h4>You have logged out!</h4>
+    </form>
+
+
+
+{% endblock %}
