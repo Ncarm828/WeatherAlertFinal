@@ -72,8 +72,8 @@ def timed_job():
                 'description' : weather.Current_Weather(jsonobject,CONDITIONS),
             }
 
-        message = "the current weather in " + weather.city + " is " + weather.temperature + " conditions: " + weather.description
-        Twilio.send_message(user.phoneNumber, message)
+        message = "the current weather " + weather['city'] + " is " + weather['temperature'] + " conditions: " + weather['description']
+        Twilio.TwilioClient().send_message(user.phoneNumber, message)
 
 sentry.captureException()
 

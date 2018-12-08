@@ -9,6 +9,9 @@
             <form action="{% url 'login' %}" method="post" class="form-horizontal">
                 {% csrf_token %}
                 <h4>Use a local account to log in.</h4>
+                
+                <small style="color: red">{{ message.Error }}</small>
+                
                 <hr />
                 <div class="form-group">
                     <label for="username" class="col-md-2 control-label">Username</label>

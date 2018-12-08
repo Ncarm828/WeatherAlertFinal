@@ -64,6 +64,10 @@ def weather(request):
         }
 
     context = {'weather' : weather}
+
+    user = UsersProfile.objects.get(username__username=request.user.username)
+    message = "the current weather " + weather['city'] + " is " + weather['temperature'] + " conditions: " + weather['description']
+    Twilio.TwilioClient().send_message(user.phoneNumber, message)
     
     return render(request,
                   'app/weather.html',
@@ -132,10 +136,13 @@ def user_login(request):
             if user.is_active:
                 login(request,user)
                 return HttpResponseRedirect(reverse('home'))
-            else:
-                return HttpResponse("Your account was inactive.")
-        else:
-            return HttpResponse("Invalid login details given")
+        message = {
+                'Error' : 'There was an error when you tried to login.. please try again',
+                }
+
+        context = {'message' : message}
+
+        return render(request, 'app/login.html', {'context': context})
     else:
         return render(request, 'app/login.html', {})
 

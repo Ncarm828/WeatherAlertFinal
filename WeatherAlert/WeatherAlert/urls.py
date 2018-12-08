@@ -5,6 +5,7 @@ Definition of urls for WeatherAlert.
 from datetime import datetime
 from django.conf.urls import url
 import django.contrib.auth.views
+from django.views.generic.base import TemplateView 
 
 # Uncomment the next lines to enable the admin:
 from django.conf.urls import include
@@ -22,7 +23,7 @@ urlpatterns = [
     url(r'^signup/$',app.views.user_signup,name='signup'),
     url(r'^verify/$',app.views.verify,name='verify'),
     url(r'^cancel/$',app.views.cancel,name='cancel'),
-    url(r'^logout/$', app.views.logout_view,name='logout'),
+    url(r'^/$',TemplateView.as_view(template_name='logout.html'),name='logout'),
 
     url(r'^login/$',app.views.user_login,name='login'),
 
