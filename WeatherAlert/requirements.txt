@@ -5,7 +5,7 @@ dj-static==0.0.6
 gunicorn==19.9.0
 whitenoise==4.1.2
 requests==2.20.1
-urllib3==1.24.1
+urllib3==1.26.5
 django-heroku==0.3.1
 APScheduler==3.5.3
 
